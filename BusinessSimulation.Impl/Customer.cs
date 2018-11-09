@@ -7,12 +7,15 @@ namespace BusinessSimulation.Impl
 {
     public class Customer : ICustomer
     {
+        static int Count { get; set; }
+        public int Id { get; set; }
         public string Name { get; }
         public List<IOrder> Orders { get;  }
         public int Sex { get; }
 
         public Customer(string name = null, int sex = 0)
         {
+            Id = Count++;
             // Generate random first/last name and assign it to customer
             if (name == null)
             {

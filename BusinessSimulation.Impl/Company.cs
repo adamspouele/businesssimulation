@@ -5,11 +5,24 @@ using BusinessSimulation.Impl;
 
 namespace BusinessSimulation.Impl
 {
-    class Company : ICompany
+    public class Company : ICompany
     {
-        public string name { get; set; }
-        public ILegalStatus legalStatus { get; set; }
-        public List<IProduct> products { get; set; }
-        public double salesRevenue { get; set; }
+        static int Count { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public List<IProduct> Products { get; set; }
+        public LegalStatus Status { get; set; }
+        public double SalesRevenue { get; set; }
+
+        public Company(string name = null, LegalStatus legalStatus = LegalStatus.SAS, List<IProduct> products = null, double salesRevenue = 0.0)
+        {
+            Id = Count++;
+            Name = name ?? RandomCompanyNameGenerator.Generate();
+            Status = legalStatus;
+
+            if (products == null) Products = new List<IProduct>();
+
+            SalesRevenue = salesRevenue;
+        }
     }
 }

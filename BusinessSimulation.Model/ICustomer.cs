@@ -6,6 +6,7 @@ namespace BusinessSimulation.Impl
 {
     public interface ICustomer
     {
+        int Id { get; set; }
         string Name { get; }
         int Sex { get;}
         List<IOrder> Orders { get;}

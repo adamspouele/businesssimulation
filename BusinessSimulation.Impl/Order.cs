@@ -7,9 +7,15 @@ namespace BusinessSimulation.Impl
 {
     class Order : IOrder
     {
-        public int Id { get; }
+        static int Count { get; set; }
+        public int Id { get; set; }
         public ICustomer Customer { get; set; }
+        public List<IProduct> Products { get; }
 
-        public List<IProduct> products { get; }
+        public Order(ICustomer customer, List<Product> products = null)
+        {
+            Id = Count++;
+            if (products == null) Products = new List<IProduct>();
+        }
     }
 }

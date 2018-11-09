@@ -6,8 +6,8 @@ namespace BusinessSimulation.Impl
 {
     public interface IOrder
     {
-        int Id { get; }
+        int Id { get; set; }
         ICustomer Customer { get; set; }
-        List<IProduct> products { get; }
+        List<IProduct> Products { get; }
     }
 }

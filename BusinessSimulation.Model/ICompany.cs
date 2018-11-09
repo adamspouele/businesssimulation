@@ -6,9 +6,10 @@ namespace BusinessSimulation.Impl
 {
     public interface ICompany
     {
-        string name { get; set; }
-        ILegalStatus legalStatus { get; set; }
-        double salesRevenue { get; set; }
-        List<IProduct> products { get;set; }
+        int Id { get; set; }
+        string Name { get; set; }
+        LegalStatus Status { get; set; }
+        double SalesRevenue { get; set; }
+        List<IProduct> Products { get;set; }
     }
 }

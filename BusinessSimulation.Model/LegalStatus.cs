@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BusinessSimulation.Impl
 {
-    public enum LegalStatusValues
+    public enum LegalStatus
     {
         SA,
         SAS,
