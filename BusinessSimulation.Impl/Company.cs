@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using BusinessSimulation.Model;
+using BusinessSimulation.Impl;
 
 namespace BusinessSimulation.Impl
 {

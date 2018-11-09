@@ -10,4 +10,8 @@
     <PackageReference Include="NUnit.Runners.Net4" Version="2.6.4" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessSimulation.Impl\BusinessSimulation.Impl.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace BusinessSimulation.Model
+namespace BusinessSimulation.Impl
 {
     public interface ILegalStatus
     {
         string Name { get; set; }
-        string getLegalStatus();
-        void setLegalStatus(int status);
+        LegalStatusValues Status { get; set; }
     }
 }

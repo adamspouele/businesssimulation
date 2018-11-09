@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace BusinessSimulation.Model
+namespace BusinessSimulation.Impl
 {
-    interface VatRegime
+    interface IVatRegime
     {
     }
 }

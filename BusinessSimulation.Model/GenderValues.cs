@@ -4,10 +4,9 @@ using System.Text;
 
 namespace BusinessSimulation.Impl
 {
-    public interface ICustomer
+    public enum GenderValues
     {
-        string Name { get; }
-        int Sex { get;}
-        List<IOrder> Orders { get;}
+        MALE,
+        FEMALE
     }
 }

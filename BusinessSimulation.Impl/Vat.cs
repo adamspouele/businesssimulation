@@ -1,5 +1,5 @@
 ﻿using System;
-using BusinessSimulation.Model;
+using BusinessSimulation.Impl;
 
 namespace BusinessSimulation.Impl
 {
