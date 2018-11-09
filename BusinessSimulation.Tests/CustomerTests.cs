@@ -39,7 +39,7 @@ namespace BusinessSimulation.Tests
         }
 
         [Test]
-        public void generate_ten_customers()
+        public void generate_ten_customers_on_the_fly()
         {
             int count = 0;
 

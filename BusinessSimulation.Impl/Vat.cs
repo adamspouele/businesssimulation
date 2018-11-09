@@ -5,14 +5,14 @@ namespace BusinessSimulation.Impl
 {
     public class Vat : IVat
     {
-        public Vat(float percent = 0.2f)
+        public Vat(double percent = 0.0)
         {
             this.percent = percent;
         }
 
-        public float percent { get; set; }
+        public double percent { get; set; }
 
-        public float calculateTTC(float amount)
+        public double calculateTTC(double amount)
         {
             return (amount / percent) + amount;
         }

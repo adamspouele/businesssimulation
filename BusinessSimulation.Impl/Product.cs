@@ -5,17 +5,18 @@ using BusinessSimulation.Impl;
 
 namespace BusinessSimulation.Impl
 {
-    class Product : IProduct
+    public class Product : IProduct
     {
-        public Product()
-        {
-            Name = "--";
-            Price = 0.0f;
-            Vat = new Vat();
-        }
-
         public string Name { get; set; }
         public float Price { get; set; }
         public IVat Vat { get; set; }
+
+        public Product(string name = "--", float price = 0.0f, Vat vat = null)
+        {
+            Name = name;
+            Price = price;
+
+            Vat = vat == null ? new Vat() : vat;
+        }
     }
 }
