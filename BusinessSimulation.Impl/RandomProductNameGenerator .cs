@@ -301,7 +301,7 @@ namespace BusinessSimulation.Impl
 "sodas",
 "sirops",
 "vin",
-"alcools", 
+"alcools"
         };
 
         public static string Generate()

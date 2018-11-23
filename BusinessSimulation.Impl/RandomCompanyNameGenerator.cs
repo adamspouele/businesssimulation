@@ -67,7 +67,7 @@ namespace BusinessSimulation.Impl
         "Majeur Shop Food",
         "Shop Food Excursion",
         "Shop Food Atelier",
-        "Nouvelle vague Shop Food",
+        "Nouvelle vague Shop Food"
 
         };
 
