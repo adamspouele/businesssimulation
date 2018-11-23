@@ -24,14 +24,18 @@ namespace BusinessSimulation.Tests
             FactoryProduct fproduct = new FactoryProduct();
             List<IProduct> products = fproduct.CreateMultipleProducts(10, 100, vat);
 
-            // create order
-            // ...
+            foreach(Product _product in products)
+            {
+                Console.WriteLine($"Product #{_product.Id}: {_product.Name}");
+            }
 
-        }
+            // create an order
+            Order order = new Order(customer, products);
 
-        [Test]
-        public void generate_ten_order_on_the_fly()
-        {
+            Console.WriteLine($"Order #{order.Id}: {order.getTotalPrice()}");
+
+            Assert.IsTrue(order.getTotalPrice() > 5);
+
         }
     }
 }
