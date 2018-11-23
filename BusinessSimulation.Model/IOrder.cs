@@ -9,6 +9,8 @@ namespace BusinessSimulation.Model
         int Id { get; set; }
         ICustomer Customer { get; set; }
         List<IProduct> Products { get; }
-        double getTotalPrice();
+        double GetTotalPrice();
+        double GetTotalPriceWithVAT();
+        double GetVatMargin();
     }
 }

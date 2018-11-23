@@ -18,7 +18,7 @@ namespace BusinessSimulation.Tests
         }
 
         [Test]
-        public void generate_first_and_last_name()
+        public void Generate_first_and_last_name()
         {
             var firstname = RandomNameGenerator.GenerateFirstName(Gender.Female);
             var lastname = RandomNameGenerator.GenerateLastName();
@@ -30,7 +30,7 @@ namespace BusinessSimulation.Tests
         }
 
         [Test]
-        public void generate_one_customers()
+        public void Generate_one_customers()
         {
             var customer = new Customer();
             Console.WriteLine($"Customer : {customer.Name}");
@@ -39,7 +39,7 @@ namespace BusinessSimulation.Tests
         }
 
         [Test]
-        public void generate_ten_customers_on_the_fly()
+        public void Generate_ten_customers_on_the_fly()
         {
             int count = 0;
 
@@ -51,9 +51,9 @@ namespace BusinessSimulation.Tests
                 var sex = "";
 
                 if (customer.Sex == 1)
-                    sex = "Homme";
+                    sex = "Male";
                 else
-                    sex = "Femme";
+                    sex = "Female";
 
                 Console.WriteLine($"Customer #{count}: {customer.Name}, Sex : {sex}");
 

@@ -16,9 +16,10 @@ namespace BusinessSimulation.Impl
         {
             Id = Count++;
             if (products == null) Products = new List<IProduct>();
+            else Products = products;
         }
 
-        public double getTotalPrice()
+        public double GetTotalPrice()
         {
             double totalPrice = 0;
             foreach (IProduct product in Products)
@@ -27,6 +28,22 @@ namespace BusinessSimulation.Impl
             }
 
             return totalPrice;
+        }
+
+        public double GetTotalPriceWithVAT()
+        {
+            double totalPrice = 0;
+            foreach (IProduct product in Products)
+            {
+                totalPrice += product.GetPriceWithVAT();
+            }
+
+            return totalPrice;
+        }
+
+        public double GetVatMargin()
+        {
+            return GetTotalPriceWithVAT() - GetTotalPrice();
         }
     }
 }

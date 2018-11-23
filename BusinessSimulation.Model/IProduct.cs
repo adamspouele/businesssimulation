@@ -8,8 +8,10 @@ namespace BusinessSimulation.Model
     {
         int Id { get; set; }
         string Name { get; set; }
-        // whithout tax
-        float Price { get; set; }
+        // price whithout tax
+        double Price { get; set; }
+        // price with tax
+        double GetPriceWithVAT();
         // tax
         IVat Vat { get; set; }
     }

@@ -10,10 +10,10 @@ namespace BusinessSimulation.Impl
         static int Count { get; set; }
         public int Id { get; set; }
         public string Name { get; set; }
-        public float Price { get; set; }
+        public double Price { get; set; }
         public IVat Vat { get; set; }
 
-        public Product(string name = null, float price = 0.0f, IVat vat = null)
+        public Product(string name = null, double price = 0.0, IVat vat = null)
         {
             Id = Count++;
             Name = name ?? RandomProductNameGenerator.Generate();
@@ -21,5 +21,12 @@ namespace BusinessSimulation.Impl
 
             Vat = vat ?? new Vat();
         }
+
+        public double GetPriceWithVAT()
+        {
+            // price + percentage of tax
+            return Price + (Price * (Vat.percent / 100));
+        }
     }
+
 }
