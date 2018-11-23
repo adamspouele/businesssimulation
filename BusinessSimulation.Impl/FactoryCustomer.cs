@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using BusinessSimulation.Model;
 
 namespace BusinessSimulation.Impl
 {
-    public class FactoryCustomer : AbstractFactoryProduct
+    public class FactoryCustomer : AbstractFactoryCustomer
     {
         private static Random _randomGender = new Random();
 

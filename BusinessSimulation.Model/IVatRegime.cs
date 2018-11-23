@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace BusinessSimulation.Impl
+namespace BusinessSimulation.Model
 {
     interface IVatRegime
     {

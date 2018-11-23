@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using BusinessSimulation.Impl;
+using BusinessSimulation.Model;
 
-namespace BusinessSimulation.Model
+namespace BusinessSimulation.Impl
 {
     public class FactoryProduct : AbstractFactoryProduct
     {
