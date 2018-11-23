@@ -4,14 +4,14 @@ using System.Text;
 
 namespace BusinessSimulation.Impl
 {
-    class Order : IOrder
+    public class Order : IOrder
     {
         static int Count { get; set; }
         public int Id { get; set; }
         public ICustomer Customer { get; set; }
         public List<IProduct> Products { get; }
 
-        public Order(ICustomer customer, List<Product> products = null)
+        public Order(ICustomer customer, List<IProduct> products = null)
         {
             Id = Count++;
             if (products == null) Products = new List<IProduct>();
