@@ -23,11 +23,12 @@ namespace BusinessSimulation.Tests
         public void generate_ten_companies_on_the_fly()
         {
             int count = 0;
+            Random random = new Random();
 
             while (count < 10)
             {
                 count++;
-                var company = new Company(null, LegalStatus.SA, null, (new Random()).Next(100000, 40000000));
+                var company = new Company(null, LegalStatus.SA, null, random.Next(100000,40000000));
                 Console.WriteLine($"Company #{count}: {company.Name}, salesRevenue: {company.SalesRevenue}");
 
                 Assert.IsTrue(company.Status == LegalStatus.SA);
