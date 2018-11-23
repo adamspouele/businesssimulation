@@ -14,6 +14,18 @@ namespace BusinessSimulation.Tests
         [Test]
         public void generate_one_order()
         {
+            FactoryCustomer fcustomer = new FactoryCustomer();
+            ICustomer customer = fcustomer.CreateNew();
+
+            // create Vat
+            Vat vat = new Vat(20);
+
+            // create products
+            FactoryProduct fproduct = new FactoryProduct();
+            List<IProduct> products = fproduct.CreateMultipleProducts(10, 100, vat);
+
+            // create order
+            // ...
 
         }
 

@@ -13,7 +13,7 @@ namespace BusinessSimulation.Impl
         public float Price { get; set; }
         public IVat Vat { get; set; }
 
-        public Product(string name = null, float price = 0.0f, Vat vat = null)
+        public Product(string name = null, float price = 0.0f, IVat vat = null)
         {
             Id = Count++;
             Name = name ?? RandomProductNameGenerator.Generate();
