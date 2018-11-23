@@ -28,7 +28,7 @@ namespace BusinessSimulation.Tests
             {
                 count++;
                 var company = new Company(null, LegalStatus.SA, null, (new Random()).Next(100000, 40000000));
-                Console.WriteLine($"Company #{count}: {company.Name}, salesRevenue: {company.SalesRevenue}");
+                Console.WriteLine($"Company #{count}: {company.Name}, sales Revenue: {company.SalesRevenue} €");
 
                 Assert.IsTrue(company.Status == LegalStatus.SA);
             }

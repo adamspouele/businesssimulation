@@ -10,5 +10,10 @@ namespace BusinessSimulation.Impl
         {
             throw new NotImplementedException();
         }
+
+        public List<IProduct> CreateMultipleProducts(int count, int priceRange = 100, IVat vat = null)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

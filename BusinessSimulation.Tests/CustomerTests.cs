@@ -48,7 +48,14 @@ namespace BusinessSimulation.Tests
                 count++;
                 FactoryCustomer fcustomer = new FactoryCustomer();
                 var customer = fcustomer.CreateNew();
-                Console.WriteLine($"Customer #{count}: {customer.Name} {customer.Sex}");
+                var sex = "";
+
+                if (customer.Sex == 1)
+                    sex = "Homme";
+                else
+                    sex = "Femme";
+
+                Console.WriteLine($"Customer #{count}: {customer.Name}, Sex : {sex}");
 
                 Assert.IsTrue(customer.Name != null);
             }

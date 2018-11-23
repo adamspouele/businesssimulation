@@ -10,5 +10,10 @@ namespace BusinessSimulation.Impl
         {
             throw new NotImplementedException();
         }
+
+        public List<ICustomer> CreateMultipleCustomers(int count)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
