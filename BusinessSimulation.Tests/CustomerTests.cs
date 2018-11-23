@@ -46,8 +46,9 @@ namespace BusinessSimulation.Tests
             while(count < 10)
             {
                 count++;
-                var customer = new Customer();
-                Console.WriteLine($"Customer #{count}: {customer.Name}");
+                FactoryCustomer fcustomer = new FactoryCustomer();
+                var customer = fcustomer.CreateNew();
+                Console.WriteLine($"Customer #{count}: {customer.Name} {customer.Sex}");
 
                 Assert.IsTrue(customer.Name != null);
             }

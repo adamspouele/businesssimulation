@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using BusinessSimulation.Impl;
 
 namespace BusinessSimulation.Impl
 {
@@ -16,6 +15,17 @@ namespace BusinessSimulation.Impl
         {
             Id = Count++;
             if (products == null) Products = new List<IProduct>();
+        }
+
+        public double getTotalPrice()
+        {
+            double totalPrice = 0;
+            foreach (IProduct product in Products)
+            {
+                totalPrice += product.Price;
+            }
+
+            return totalPrice;
         }
     }
 }

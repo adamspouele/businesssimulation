@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using BusinessSimulation.Impl;
 
 namespace BusinessSimulation.Impl
 {
@@ -11,7 +10,8 @@ namespace BusinessSimulation.Impl
         public int Id { get; set; }
         public string Name { get; }
         public List<IOrder> Orders { get;  }
-        public int Sex { get; }
+        // 1 = Male | 2 = Female
+        public int Sex { get; } 
 
         public Customer(string name = null, int sex = 0)
         {
@@ -19,9 +19,7 @@ namespace BusinessSimulation.Impl
             // Generate random first/last name and assign it to customer
             if (name == null)
             {
-                var random = new Random();
-
-                if (random.Next(1, 3) == 1)
+                if (sex == 1)
                     Name = RandomNameGenerator.Generate(Gender.Male);
                 else
                     Name = RandomNameGenerator.Generate(Gender.Female);

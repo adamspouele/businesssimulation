@@ -14,6 +14,7 @@ namespace BusinessSimulation.Tests
         [Test]
         public void generate_one_order()
         {
+
         }
 
         [Test]
