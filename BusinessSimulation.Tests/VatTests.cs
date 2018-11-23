@@ -27,9 +27,9 @@ namespace BusinessSimulation.Tests
             while (count < 10)
             {
                 count++;
-                var random = new Random();
+                var random = new Random(DateTime.Now.Millisecond);
 
-                var vat = new Vat(random.NextDouble());
+                var vat = new Vat(random.Next(10,20));
                 Console.WriteLine($"Vat #{count}: {vat.percent} %");
 
                 Assert.IsTrue(vat.percent != 0.0);
