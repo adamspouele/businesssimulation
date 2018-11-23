@@ -14,7 +14,7 @@ namespace BusinessSimulation.Tests
         [Test]
         public void generate_one_company()
         {
-            var company = new Company("Apple", LegalStatus.SA, null, 0);
+            var company = new Company(null, LegalStatus.SA, null, 0);
 
             Assert.IsTrue(company.Status == LegalStatus.SA);
         }
@@ -27,7 +27,7 @@ namespace BusinessSimulation.Tests
             while (count < 10)
             {
                 count++;
-                var company = new Company("Apple", LegalStatus.SA, null, (new Random()).Next(100000, 40000000));
+                var company = new Company(null, LegalStatus.SA, null, (new Random()).Next(100000, 40000000));
                 Console.WriteLine($"Company #{count}: {company.Name}, salesRevenue: {company.SalesRevenue}");
 
                 Assert.IsTrue(company.Status == LegalStatus.SA);
