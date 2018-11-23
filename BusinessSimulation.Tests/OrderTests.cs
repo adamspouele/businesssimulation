@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
 using BusinessSimulation.Impl;
+using BusinessSimulation.Model;
 
 namespace BusinessSimulation.Tests
 {
