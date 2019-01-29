@@ -19,6 +19,7 @@ namespace BusinessSimulation.Impl
             m_orders = new List<IOrder>();
             m_companies = new List<ICompany>();
             m_customers = new List<ICustomer>();
+            m_vats = new List<IVat>();
         }
 
         public void AddCompany(ICompany company)
@@ -111,7 +112,10 @@ namespace BusinessSimulation.Impl
         {
             var random = new Random();
 
-            return m_companies[random.Next(0, m_companies.Count - 1)];
+            if (m_companies.Count > 0)
+                return m_companies[random.Next(0, m_companies.Count - 1)];
+            else
+                return null;
         }
     }
 }

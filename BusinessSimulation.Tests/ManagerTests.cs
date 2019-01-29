@@ -35,7 +35,7 @@ namespace BusinessSimulation.Tests
         }
 
         [Test]
-        public void add_an_order_to_manager()
+        public void add_an_empty_order_to_manager()
         {
             var manager = new Manager();
 
@@ -104,24 +104,28 @@ namespace BusinessSimulation.Tests
         }
 
         [Test]
-        public void aaa()
+        public void add_an_order_to_a_manager()
         {
             var manager = new Manager();
 
             ICustomer customer = FactoryCustomer.CreateNew();
+            manager.AddCustomer(customer);
 
             // create Vat
             Vat vat = new Vat(20);
+            manager.AddVat(vat);
+
+            ICompany store = new Company();
+            manager.AddCompany(store);
 
             var random = new Random();
-
             // create products
-            List<IProduct> products = FactoryProduct.CreateMultipleProducts(random.Next(5, 15), random.Next(50, 150), vat, manager);
+            List<IProduct> products = FactoryProduct.CreateMultipleProducts(random.Next(5, 15), random.Next(50, 150), vat, manager, store);
 
             foreach (Product _product in products)
             {
-                manager.AssignRandomCompanyToProduct(_product);
-                Console.WriteLine($"Product #{_product.Id} | {_product.Name}, provider: {_product.Company}, vat : {_product.Vat.percent}%, price without vat : {_product.Price} €, price with vat : {_product.GetPriceWithVAT()} €");
+                manager.AddProduct(_product);
+                Console.WriteLine($"Product #{_product.Id} | {_product.Name}, store: {_product.Company.Name}, vat : {_product.Vat.percent}%, price without vat : {_product.Price} €, price with vat : {_product.GetPriceWithVAT()} €");
             }
 
             // create an order
@@ -129,7 +133,7 @@ namespace BusinessSimulation.Tests
 
             Console.WriteLine($"Order #{order.Id} | {order.Products.Count} products, price : {order.GetTotalPrice()} €, price with vat : {order.GetTotalPriceWithVAT()} €, vat margin : {order.GetVatMargin()} €  ");
 
-           // Console.WriteLine($"Manager : Customers : {manager.GetCustomers.}")
+            //Console.WriteLine($"Manager : Customers : {manager.GetCustomers.}")
 
             Assert.IsTrue(order.Products.Count > 1);
         }

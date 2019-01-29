@@ -30,7 +30,7 @@ namespace BusinessSimulation.Tests
         }
 
         [Test]
-        public void create_one_customers()
+        public void create_one_customer()
         {
             var customer = new Customer();
             Console.WriteLine($"Customer : {customer.Name}");

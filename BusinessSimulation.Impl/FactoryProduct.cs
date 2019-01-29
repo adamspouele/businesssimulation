@@ -20,6 +20,10 @@ namespace BusinessSimulation.Impl
             {
                 manager.AssignRandomCompanyToProduct(product);
             }
+            else
+            {
+                product.Company = store;
+            }
 
             return product;
         }
@@ -29,8 +33,10 @@ namespace BusinessSimulation.Impl
         {
             List<IProduct> products = new List<IProduct>();
 
-            if(store == null)
+            if (store == null && manager.GetCompanies().Count > 0)
                 store = manager.getRandomCompany();
+            else if(manager.GetCompanies().Count == 0)
+                return null;
 
             int iteration = 0;
             while (iteration < count)
