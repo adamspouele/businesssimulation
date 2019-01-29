@@ -12,7 +12,7 @@ namespace BusinessSimulation.Tests
     class VatTests
     {
         [Test]
-        public void Create_one_vat()
+        public void create_one_vat()
         {
             var vat = new Vat();
 
@@ -20,7 +20,7 @@ namespace BusinessSimulation.Tests
         }
 
         [Test]
-        public void Create_ten_vats_on_the_fly()
+        public void create_ten_vats_on_the_fly()
         {
             int count = 0;
 

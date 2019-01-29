@@ -24,5 +24,7 @@ namespace BusinessSimulation.Model
         void RemoveCustomer(ICustomer customer);
         void RemoveVat(IVat vat);
         IProduct AssignRandomCompanyToProduct(IProduct product);
+
+        ICompany getRandomCompany();
     }
 }

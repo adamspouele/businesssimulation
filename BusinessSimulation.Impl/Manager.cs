@@ -106,5 +106,12 @@ namespace BusinessSimulation.Impl
         {
             m_vats.Remove(vat);
         }
+
+        public ICompany getRandomCompany()
+        {
+            var random = new Random();
+
+            return m_companies[random.Next(0, m_companies.Count - 1)];
+        }
     }
 }

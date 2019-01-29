@@ -19,7 +19,7 @@ namespace BusinessSimulation.Tests
         }
 
         [Test]
-        public void AddACustomerToManager()
+        public void add_a_customer_to_manager()
         {
             var manager = new Manager();
 
@@ -35,7 +35,7 @@ namespace BusinessSimulation.Tests
         }
 
         [Test]
-        public void AddAnOrderToManager()
+        public void add_an_order_to_manager()
         {
             var manager = new Manager();
 
@@ -52,7 +52,7 @@ namespace BusinessSimulation.Tests
         }
 
         [Test]
-        public void AddAProductToManager()
+        public void add_a_product_to_manager()
         {
             var manager = new Manager();
 
@@ -68,7 +68,7 @@ namespace BusinessSimulation.Tests
         }
 
         [Test]
-        public void AddACompanyToManager()
+        public void add_a_company_to_manager()
         {
             var manager = new Manager();
 
@@ -84,7 +84,7 @@ namespace BusinessSimulation.Tests
         }
 
         [Test]
-        public void AssignACompanyToAProduct()
+        public void assign_a_company_to_a_product()
         {
             var manager = new Manager();
 
