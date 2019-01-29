@@ -12,7 +12,7 @@ namespace BusinessSimulation.Tests
     class ProductTests
     {
         [Test]
-        public void Generate_one_product_with_price()
+        public void Create_one_product_with_price()
         {
             var product = new Product("sandwitch", 6.9f);
 
@@ -20,7 +20,7 @@ namespace BusinessSimulation.Tests
         }
         
         [Test]
-        public void Generate_ten_coffee_products_on_the_fly()
+        public void Create_ten_coffee_products_on_the_fly()
         {
             int count = 0;
 

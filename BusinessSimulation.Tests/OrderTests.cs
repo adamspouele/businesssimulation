@@ -13,7 +13,7 @@ namespace BusinessSimulation.Tests
     class OrderTests
     {
         [Test]
-        public void Generate_one_order()
+        public void Create_one_order()
         {
             ICustomer customer = FactoryCustomer.CreateNew();
 

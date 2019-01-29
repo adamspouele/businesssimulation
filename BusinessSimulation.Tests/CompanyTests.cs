@@ -13,7 +13,7 @@ namespace BusinessSimulation.Tests
     class CompanyTests
     {
         [Test]
-        public void Generate_one_company()
+        public void Create_one_company()
         {
             var company = new Company(null, LegalStatus.SA, null, 0);
 
@@ -21,7 +21,7 @@ namespace BusinessSimulation.Tests
         }
 
         [Test]
-        public void Generate_ten_companies_on_the_fly()
+        public void Create_ten_companies_on_the_fly()
         {
             int count = 0;
             Random random = new Random();
