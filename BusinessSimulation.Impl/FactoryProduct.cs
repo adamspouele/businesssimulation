@@ -5,17 +5,12 @@ using BusinessSimulation.Model;
 
 namespace BusinessSimulation.Impl
 {
-    public class FactoryProduct : AbstractFactoryProduct
+    public static class FactoryProduct
     {
         private static Random _random = new Random();
 
-        public FactoryProduct()
-        {
-
-        }
-
         // Create a product
-        public new IProduct CreateNew(int priceRange = 100, IVat vat = null, IManager manager = null)
+        public static IProduct CreateNew(int priceRange = 100, IVat vat = null, IManager manager = null)
         {
             String productName = RandomProductNameGenerator.Generate();
             int productPrice = _random.Next(0, priceRange);
@@ -28,7 +23,7 @@ namespace BusinessSimulation.Impl
         }
 
         // Create multiple products at once
-        public new List<IProduct> CreateMultipleProducts(int count, int priceRange = 100, IVat vat = null, IManager manager = null)
+        public static List<IProduct> CreateMultipleProducts(int count, int priceRange = 100, IVat vat = null, IManager manager = null)
         {
             List<IProduct> products = new List<IProduct>();
 

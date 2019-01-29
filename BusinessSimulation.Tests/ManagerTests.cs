@@ -23,8 +23,7 @@ namespace BusinessSimulation.Tests
         {
             var manager = new Manager();
 
-            FactoryCustomer fcustomer = new FactoryCustomer();
-            ICustomer customer = fcustomer.CreateNew();
+            ICustomer customer = FactoryCustomer.CreateNew();
 
             manager.AddCustomer(customer);
 
@@ -57,8 +56,7 @@ namespace BusinessSimulation.Tests
         {
             var manager = new Manager();
 
-            FactoryProduct fproduct = new FactoryProduct();
-            IProduct product = fproduct.CreateNew();
+            IProduct product = FactoryProduct.CreateNew();
 
             manager.AddProduct(product);
 
@@ -90,8 +88,7 @@ namespace BusinessSimulation.Tests
         {
             var manager = new Manager();
 
-            FactoryProduct fproduct = new FactoryProduct();
-            IProduct product = fproduct.CreateNew();
+            IProduct product = FactoryProduct.CreateNew();
 
             manager.AddProduct(product);
 
@@ -111,8 +108,7 @@ namespace BusinessSimulation.Tests
         {
             var manager = new Manager();
 
-            FactoryCustomer fcustomer = new FactoryCustomer();
-            ICustomer customer = fcustomer.CreateNew();
+            ICustomer customer = FactoryCustomer.CreateNew();
 
             // create Vat
             Vat vat = new Vat(20);
@@ -120,8 +116,7 @@ namespace BusinessSimulation.Tests
             var random = new Random();
 
             // create products
-            FactoryProduct fproduct = new FactoryProduct();
-            List<IProduct> products = fproduct.CreateMultipleProducts(random.Next(5, 15), random.Next(50, 150), vat, manager);
+            List<IProduct> products = FactoryProduct.CreateMultipleProducts(random.Next(5, 15), random.Next(50, 150), vat, manager);
 
             foreach (Product _product in products)
             {

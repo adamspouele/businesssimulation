@@ -46,8 +46,7 @@ namespace BusinessSimulation.Tests
             while(count < 10)
             {
                 count++;
-                FactoryCustomer fcustomer = new FactoryCustomer();
-                var customer = fcustomer.CreateNew();
+                var customer = FactoryCustomer.CreateNew();
                 var sex = "";
 
                 if (customer.Sex == 1)

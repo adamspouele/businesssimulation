@@ -11,6 +11,7 @@ namespace BusinessSimulation.Impl
         private List<IOrder> m_orders;
         private List<ICompany> m_companies;
         private List<ICustomer> m_customers;
+        private List<IVat> m_vats;
 
         public Manager()
         {
@@ -38,6 +39,11 @@ namespace BusinessSimulation.Impl
         public void AddCustomer(ICustomer customer)
         {
             m_customers.Add(customer);
+        }
+
+        public void AddVat(IVat vat)
+        {
+            m_vats.Add(vat);
         }
 
         public List<ICompany> GetCompanies()
@@ -89,6 +95,16 @@ namespace BusinessSimulation.Impl
             product.Company = m_companies[random.Next(0, m_companies.Count - 1)];
 
             return product;
+        }
+
+        public List<IVat> GetVats()
+        {
+            return m_vats;
+        }
+
+        public void RemoveVat(IVat vat)
+        {
+            m_vats.Remove(vat);
         }
     }
 }

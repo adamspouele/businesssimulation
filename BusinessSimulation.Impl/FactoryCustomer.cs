@@ -5,16 +5,12 @@ using BusinessSimulation.Model;
 
 namespace BusinessSimulation.Impl
 {
-    public class FactoryCustomer : AbstractFactoryCustomer
+    public static class FactoryCustomer
     {
         private static Random _randomGender = new Random();
 
-        public FactoryCustomer()
-        {
-        }
-
         // Create a new customer
-        public new ICustomer CreateNew()
+        public static ICustomer CreateNew()
         {
             String customerName = "";
             var sex = _randomGender.Next(1, 3);
@@ -28,7 +24,7 @@ namespace BusinessSimulation.Impl
         }
 
         // Create multiple customers at once
-        public new List<ICustomer> CreateMultipleCustomers(int count)
+        public static List<ICustomer> CreateMultipleCustomers(int count)
         {
             List<ICustomer> customers = new List<ICustomer>();
 

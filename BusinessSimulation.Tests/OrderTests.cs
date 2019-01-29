@@ -15,8 +15,7 @@ namespace BusinessSimulation.Tests
         [Test]
         public void Generate_one_order()
         {
-            FactoryCustomer fcustomer = new FactoryCustomer();
-            ICustomer customer = fcustomer.CreateNew();
+            ICustomer customer = FactoryCustomer.CreateNew();
 
             // create Vat
             Vat vat = new Vat(20);
@@ -24,8 +23,7 @@ namespace BusinessSimulation.Tests
             var random = new Random();
 
             // create products
-            FactoryProduct fproduct = new FactoryProduct();
-            List<IProduct> products = fproduct.CreateMultipleProducts(random.Next(5, 15), random.Next(50, 150), vat);
+            List<IProduct> products = FactoryProduct.CreateMultipleProducts(random.Next(5, 15), random.Next(50, 150), vat);
 
             foreach(Product _product in products)
             {

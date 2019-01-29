@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessSimulation.Model", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessSimulation.Impl", "BusinessSimulation.Impl\BusinessSimulation.Impl.csproj", "{B359CC76-DAF4-4D43-B729-F1EE985A2DDF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessSimulation.App", "BusinessSimulation.App\BusinessSimulation.App.csproj", "{DCA6A593-2682-4EDC-81EB-75D49E16C992}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessSimulation.App", "BusinessSimulation.App\BusinessSimulation.App.csproj", "{59ED876E-4421-47CA-AA71-313AF3361046}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +35,10 @@ Global
 		{B359CC76-DAF4-4D43-B729-F1EE985A2DDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B359CC76-DAF4-4D43-B729-F1EE985A2DDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B359CC76-DAF4-4D43-B729-F1EE985A2DDF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DCA6A593-2682-4EDC-81EB-75D49E16C992}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DCA6A593-2682-4EDC-81EB-75D49E16C992}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DCA6A593-2682-4EDC-81EB-75D49E16C992}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DCA6A593-2682-4EDC-81EB-75D49E16C992}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59ED876E-4421-47CA-AA71-313AF3361046}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59ED876E-4421-47CA-AA71-313AF3361046}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59ED876E-4421-47CA-AA71-313AF3361046}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59ED876E-4421-47CA-AA71-313AF3361046}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
