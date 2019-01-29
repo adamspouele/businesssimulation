@@ -15,22 +15,27 @@ namespace BusinessSimulation.Impl
         }
 
         // Create a product
-        public IProduct CreateNew(int priceRange = 100, IVat vat = null)
+        public new IProduct CreateNew(int priceRange = 100, IVat vat = null, IManager manager = null)
         {
             String productName = RandomProductNameGenerator.Generate();
             int productPrice = _random.Next(0, priceRange);
-            return new Product(productName, productPrice, vat);
+            var product = new Product(productName, productPrice, vat);
+
+            if(manager != null)
+                manager.AssignRandomCompanyToProduct(product);
+
+            return product;
         }
 
         // Create multiple products at once
-        public new List<IProduct> CreateMultipleProducts(int count, int priceRange = 100, IVat vat = null)
+        public new List<IProduct> CreateMultipleProducts(int count, int priceRange = 100, IVat vat = null, IManager manager = null)
         {
             List<IProduct> products = new List<IProduct>();
 
             int iteration = 0;
             while (iteration < count)
             {
-                products.Add(CreateNew(priceRange, vat));
+                products.Add(CreateNew(priceRange, vat, manager));
                 iteration++;
             }
 

@@ -12,9 +12,12 @@ namespace BusinessSimulation.Impl
         public ICustomer Customer { get; set; }
         public List<IProduct> Products { get; }
 
-        public Order(ICustomer customer, List<IProduct> products = null)
+        public Order(ICustomer customer = null, List<IProduct> products = null)
         {
             Id = Count++;
+
+            Customer = customer;
+
             if (products == null) Products = new List<IProduct>();
             else Products = products;
         }

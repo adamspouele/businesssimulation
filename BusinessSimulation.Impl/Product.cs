@@ -12,6 +12,7 @@ namespace BusinessSimulation.Impl
         public string Name { get; set; }
         public double Price { get; set; }
         public IVat Vat { get; set; }
+        public ICompany Company { get; set; }
 
         public Product(string name = null, double price = 0.0, IVat vat = null)
         {
@@ -24,7 +25,7 @@ namespace BusinessSimulation.Impl
 
         public double GetPriceWithVAT()
         {
-            // price + percentage of tax
+            // price with vat
             return Price + (Price * (Vat.percent / 100));
         }
     }
