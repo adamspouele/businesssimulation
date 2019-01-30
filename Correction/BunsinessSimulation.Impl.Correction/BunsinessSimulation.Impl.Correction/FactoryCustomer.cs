@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using BusinessSimulation.Model;
 
-namespace BusinessSimulation.Impl.Correction
+namespace BusinessSimulation.Impl
 {
     public static class FactoryCustomer
     {

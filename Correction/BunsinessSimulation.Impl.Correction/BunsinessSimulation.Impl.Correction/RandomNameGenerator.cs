@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace BusinessSimulation.Impl.Correction
+namespace BusinessSimulation.Impl
 {
     public static class RandomNameGenerator
     {

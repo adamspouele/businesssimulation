@@ -1,7 +1,7 @@
 ﻿using System;
 using BusinessSimulation.Model;
 
-namespace BusinessSimulation.Impl.Correction
+namespace BusinessSimulation.Impl
 {
     public class Vat : IVat
     {

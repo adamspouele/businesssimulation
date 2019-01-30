@@ -4,7 +4,7 @@ using System.Text;
 using BusinessSimulation.Model;
 using System.Linq;
 
-namespace BusinessSimulation.Impl.Correction
+namespace BusinessSimulation.Impl
 {
     public class Manager : IManager
     {
