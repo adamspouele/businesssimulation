@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace BusinessSimulation.Impl
+namespace BusinessSimulation.Impl.Correction
 {
     public static class RandomProductNameGenerator
     {
@@ -306,7 +306,7 @@ namespace BusinessSimulation.Impl
 
         public static string Generate()
         {
-            throw new NotImplementedException();
+            return _candidatesNames[_random.Next(0, _candidatesNames.Count)];
         }
     }
 }

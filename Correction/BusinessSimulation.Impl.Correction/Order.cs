@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using BusinessSimulation.Model;
 
-namespace BusinessSimulation.Impl
+namespace BusinessSimulation.Impl.Correction
 {
     public class Order : IOrder
     {
@@ -24,17 +24,29 @@ namespace BusinessSimulation.Impl
 
         public double GetTotalPrice()
         {
-            throw new NotImplementedException();
+            double totalPrice = 0;
+            foreach (IProduct product in Products)
+            {
+                totalPrice += product.Price;
+            }
+
+            return totalPrice;
         }
 
         public double GetTotalPriceWithVAT()
         {
-            throw new NotImplementedException();
+            double totalPrice = 0;
+            foreach (IProduct product in Products)
+            {
+                totalPrice += product.GetPriceWithVAT();
+            }
+
+            return totalPrice;
         }
 
         public double GetVatMargin()
         {
-            throw new NotImplementedException();
+            return GetTotalPriceWithVAT() - GetTotalPrice();
         }
     }
 }

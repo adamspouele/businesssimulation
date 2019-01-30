@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using BusinessSimulation.Model;
 
-namespace BusinessSimulation.Impl
+namespace BusinessSimulation.Impl.Correction
 {
     public class Product : IProduct
     {
@@ -26,7 +26,7 @@ namespace BusinessSimulation.Impl
         public double GetPriceWithVAT()
         {
             // price with vat
-            throw new NotImplementedException();
+            return Price + (Price * (Vat.percent / 100));
         }
     }
 

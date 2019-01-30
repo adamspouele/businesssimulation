@@ -1,7 +1,7 @@
 ﻿using System;
 using BusinessSimulation.Model;
 
-namespace BusinessSimulation.Impl
+namespace BusinessSimulation.Impl.Correction
 {
     public class Vat : IVat
     {
@@ -17,7 +17,7 @@ namespace BusinessSimulation.Impl
 
         public double calculateTTC(double amount)
         {
-            throw new NotImplementedException();
+            return (amount / percent) + amount;
         }
     }
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace BusinessSimulation.Impl
+namespace BusinessSimulation.Impl.Correction
 {
     public static class RandomNameGenerator
     {
@@ -3866,22 +3866,24 @@ namespace BusinessSimulation.Impl
 
         public static string GenerateLastName()
         {
-            throw new NotImplementedException();
+            return _lastNames[_random.Next(0, _lastNames.Count)];
         }
 
         private static string GenerateMaleName()
         {
-            throw new NotImplementedException();
+            return _men[_random.Next(0, _men.Count)];
         }
 
         private static string GenerateFemaleName()
         {
-            throw new NotImplementedException();
+            return _women[_random.Next(0, _women.Count)];
         }
 
         public static string GenerateFirstName(Gender gender)
         {
-            throw new NotImplementedException();
+            if (gender == Gender.Male)
+                return GenerateMaleName();
+            return GenerateFemaleName();
         }
 
     }

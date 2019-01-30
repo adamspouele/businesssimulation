@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using BusinessSimulation.Model;
 
-namespace BusinessSimulation.Impl
+namespace BusinessSimulation.Impl.Correction
 {
     public static class FactoryCompany
     {
@@ -16,7 +16,16 @@ namespace BusinessSimulation.Impl
         // Create multiple company at once
         public static List<ICompany> CreateMultipleCompanies(int count)
         {
-            throw new NotImplementedException();
+            List<ICompany> companies = new List<ICompany>();
+
+            int iteration = 0;
+            while (iteration < count)
+            {
+                companies.Add(CreateNew());
+                iteration++;
+            }
+
+            return companies;
         }
     }
 }

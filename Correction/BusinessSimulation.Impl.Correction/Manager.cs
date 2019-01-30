@@ -4,7 +4,7 @@ using System.Text;
 using BusinessSimulation.Model;
 using System.Linq;
 
-namespace BusinessSimulation.Impl
+namespace BusinessSimulation.Impl.Correction
 {
     public class Manager : IManager
     {
@@ -94,7 +94,13 @@ namespace BusinessSimulation.Impl
 
         public IProduct AssignRandomCompanyToProduct(IProduct product)
         {
-            throw new NotImplementedException();
+            if (!m_products.Contains(product)) return null;
+
+            var random = new Random();
+
+            product.Company = m_companies[random.Next(0, m_companies.Count - 1)];
+
+            return product;
         }
 
         public List<IVat> GetVats()
@@ -109,7 +115,12 @@ namespace BusinessSimulation.Impl
 
         public ICompany getRandomCompany()
         {
-            throw new NotImplementedException();
+            var random = new Random();
+
+            if (m_companies.Count > 0)
+                return m_companies[random.Next(0, m_companies.Count - 1)];
+            else
+                return null;
         }
     }
 }
