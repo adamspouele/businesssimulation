@@ -16,7 +16,7 @@ namespace BusinessSimulation.Tests
         {
             var vat = new Vat();
 
-            Assert.IsTrue(vat.percent == 0.0);
+            Assert.AreEqual(vat.percent == 0.0, 0.0);
         }
 
         [Test]
@@ -32,7 +32,7 @@ namespace BusinessSimulation.Tests
                 var vat = new Vat(random.Next(10,20));
                 Console.WriteLine($"Vat #{count}: {vat.percent} %");
 
-                Assert.IsTrue(vat.percent != 0.0);
+                Assert.Greater(vat.percent, 0.0);
             }
         }
     }

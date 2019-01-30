@@ -53,7 +53,7 @@ namespace BusinessSimulation.Tests
 
             ICustomer customer = new Customer(fullname, 1);
 
-            Assert.IsTrue(fullname != null && customer.Sex == 1);
+            Assert.AreEqual(customer.Sex, 1);
         }
 
         [Test]
@@ -64,7 +64,7 @@ namespace BusinessSimulation.Tests
 
             ICustomer customer = new Customer(fullname, 2);
 
-            Assert.IsTrue(fullname != null && customer.Sex == 2);
+            Assert.AreEqual(customer.Sex, 2);
         }
 
         [Test]
@@ -85,7 +85,7 @@ namespace BusinessSimulation.Tests
 
                 Console.WriteLine($"Customer #{count}: {customer.Name}, Sex : {sex}");
 
-                Assert.IsTrue(customer.Name != null);
+                Assert.IsNotNull(customer.Name);
             }
         }
     }

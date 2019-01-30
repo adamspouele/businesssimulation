@@ -17,7 +17,7 @@ namespace BusinessSimulation.Tests
         {
             Console.WriteLine("create_one_product_with_price");
             var randomProductName = RandomProductNameGenerator.Generate();
-            Assert.IsTrue(randomProductName != null);
+            Assert.NotNull(randomProductName);
         }
 
         [Test]
@@ -27,7 +27,7 @@ namespace BusinessSimulation.Tests
             vat.percent = 20;
             IProduct product = new Product("sandwitch", 2.0f, vat);
 
-            Assert.IsTrue(product.Vat != null);
+            Assert.NotNull(product.Vat);
         }
 
         [Test]
@@ -40,7 +40,7 @@ namespace BusinessSimulation.Tests
             ICompany store = new Company();
             product.Company = store;
 
-            Assert.IsTrue(product.Company != null);
+            Assert.NotNull(product.Company);
         }
 
         [Test]
@@ -48,7 +48,7 @@ namespace BusinessSimulation.Tests
         {
             var product = new Product("sandwitch", 6.9f);
 
-            Assert.IsTrue(product.Price == 6.9f);
+            Assert.AreEqual(product.Price, 6.9f);
         }
 
         [Test]
@@ -56,7 +56,7 @@ namespace BusinessSimulation.Tests
         {
             var product = new Product("sandwitch", 6.9f);
 
-            Assert.IsTrue(product.GetPriceWithVAT() > 0);
+            Assert.Greater(product.GetPriceWithVAT(), 0);
         }
 
         [Test]
@@ -70,7 +70,7 @@ namespace BusinessSimulation.Tests
                 var product = new Product(null, 10.0f);
                 Console.WriteLine($"Product #{count}: {product.Name}");
 
-                Assert.IsTrue(product.Name != "");
+                Assert.IsNotEmpty(product.Name, "Le nom du produit ne peut pas être vide");
             }
         }
     }

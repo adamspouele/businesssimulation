@@ -17,7 +17,7 @@ namespace BusinessSimulation.Tests
         {
             var company = new Company(null, LegalStatus.SA, null, 0);
 
-            Assert.IsTrue(company.Status == LegalStatus.SA);
+            Assert.AreEqual(company.Status, LegalStatus.SA);
         }
 
         [Test]
@@ -32,7 +32,7 @@ namespace BusinessSimulation.Tests
                 var company = new Company(null, LegalStatus.SA, null, (new Random()).Next(100000, 40000000));
                 Console.WriteLine($"Company #{count}: {company.Name}, salesRevenue: {company.SalesRevenue}");
 
-                Assert.IsTrue(company.Status == LegalStatus.SA);
+                Assert.AreEqual(company.Status, LegalStatus.SA);
             }
         }
     }

@@ -21,7 +21,7 @@ namespace BusinessSimulation.Tests
 
             order.Customer = customer;
 
-            Console.WriteLine(order.Customer != null);
+            Assert.NotNull(order.Customer);
         }
 
         [Test]
@@ -33,7 +33,7 @@ namespace BusinessSimulation.Tests
 
             order.Products.AddRange(products);
 
-            Console.WriteLine(order.Products.Count == 2);
+            Assert.AreEqual(order.Products.Count, 2);
         }
 
         [Test]
@@ -45,7 +45,7 @@ namespace BusinessSimulation.Tests
 
             order.Products.AddRange(products);
 
-            Console.WriteLine(order.GetTotalPrice() > 0);
+            Assert.Greater(order.GetTotalPrice(), 0);
         }
 
         [Test]
@@ -57,7 +57,7 @@ namespace BusinessSimulation.Tests
 
             order.Products.AddRange(products);
 
-            Console.WriteLine(order.GetTotalPriceWithVAT() > 0);
+            Assert.Greater(order.GetTotalPriceWithVAT(), 0);
         }
 
         [Test]
@@ -69,7 +69,7 @@ namespace BusinessSimulation.Tests
 
             order.Products.AddRange(products);
 
-            Console.WriteLine(order.GetVatMargin() > 0);
+            Assert.Greater(order.GetVatMargin(), 0);
         }
 
         [Test]
@@ -102,7 +102,7 @@ namespace BusinessSimulation.Tests
 
             Console.WriteLine($"Order #{order.Id}: {order.Products.Count} products, price : {order.GetTotalPrice()} €, price with vat : {order.GetTotalPriceWithVAT()} €, vat margin : {order.GetVatMargin()} €  ");
 
-            Assert.IsTrue(products.Count > 1);
+            Assert.Greater(products.Count, 1);
             //Assert.IsTrue(order.Products.Count > 1);
         }
     }

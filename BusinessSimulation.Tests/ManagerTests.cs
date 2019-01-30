@@ -31,7 +31,7 @@ namespace BusinessSimulation.Tests
 
             Console.WriteLine($"Manager : customers count : {productsCount}");
 
-            Assert.AreEqual(1, productsCount);
+            Assert.AreEqual(productsCount, 1);
         }
 
         [Test]
@@ -48,7 +48,7 @@ namespace BusinessSimulation.Tests
 
             Console.WriteLine($"Manager : orders count : {ordersCount}");
 
-            Assert.AreEqual(1, ordersCount);
+            Assert.AreEqual(ordersCount, 1);
         }
 
         [Test]
@@ -64,7 +64,7 @@ namespace BusinessSimulation.Tests
 
             Console.WriteLine($"Manager : products count : {productsCount}");
 
-            Assert.AreEqual(1, productsCount);
+            Assert.AreEqual(productsCount, 1);
         }
 
         [Test]
@@ -80,7 +80,7 @@ namespace BusinessSimulation.Tests
 
             Console.WriteLine($"Manager : companies count : {companiesCount}");
 
-            Assert.AreEqual(1, companiesCount);
+            Assert.AreEqual(companiesCount, 1);
         }
 
         [Test]
@@ -135,7 +135,7 @@ namespace BusinessSimulation.Tests
 
             //Console.WriteLine($"Manager : Customers : {manager.GetCustomers.}")
 
-            Assert.IsTrue(order.Products.Count > 1);
+            Assert.Greater(order.Products.Count, 1);
         }
     }
 }
