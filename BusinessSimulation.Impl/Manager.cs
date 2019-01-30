@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using BusinessSimulation.Model;
+using System.Linq;
 
 namespace BusinessSimulation.Impl
 {
@@ -24,6 +25,8 @@ namespace BusinessSimulation.Impl
 
         public void AddCompany(ICompany company)
         {
+            if (m_companies.Where(c => c.Name == company.Name).Any()) throw new ArgumentException("Une entreprise existe déjà avec ce nom.");
+
             m_companies.Add(company);
         }
 
@@ -39,6 +42,8 @@ namespace BusinessSimulation.Impl
 
         public void AddCustomer(ICustomer customer)
         {
+            if (m_customers.Where(c => c.Name == customer.Name).Any()) throw new ArgumentException("Un client exist déjà avec ce nom.");
+
             m_customers.Add(customer);
         }
 

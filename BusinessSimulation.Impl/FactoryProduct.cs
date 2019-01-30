@@ -10,20 +10,14 @@ namespace BusinessSimulation.Impl
         private static Random _random = new Random();
 
         // Create a product
-        public static IProduct CreateNew(int priceRange = 100, IVat vat = null, IManager manager = null, ICompany store = null)
+        public static IProduct CreateNew(int priceRange = 100, IVat vat = null, ICompany store = null)
         {
             String productName = RandomProductNameGenerator.Generate();
             int productPrice = _random.Next(0, priceRange);
             var product = new Product(productName, productPrice, vat);
 
-            if(manager != null && store != null)
-            {
-                manager.AssignRandomCompanyToProduct(product);
-            }
-            else
-            {
-                product.Company = store;
-            }
+            if(store != null)
+               product.Company = store;
 
             return product;
         }
@@ -33,15 +27,16 @@ namespace BusinessSimulation.Impl
         {
             List<IProduct> products = new List<IProduct>();
 
-            if (store == null && manager.GetCompanies().Count > 0)
-                store = manager.getRandomCompany();
-            else if(manager.GetCompanies().Count == 0)
-                return null;
+            if(manager != null)
+            {
+                if (store == null && manager.GetCompanies().Count > 0)
+                    store = manager.getRandomCompany();
+            }
 
             int iteration = 0;
             while (iteration < count)
             {
-                products.Add(CreateNew(priceRange, vat, manager, store));
+                products.Add(CreateNew(priceRange, vat, store));
                 iteration++;
             }
 

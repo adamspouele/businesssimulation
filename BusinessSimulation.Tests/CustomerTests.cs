@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
+using BusinessSimulation.Model;
 using BusinessSimulation.Impl;
 
 namespace BusinessSimulation.Tests
@@ -18,24 +19,52 @@ namespace BusinessSimulation.Tests
         }
 
         [Test]
-        public void create_first_and_last_name()
+        public void create_a_male_first_name()
         {
-            var firstname = RandomNameGenerator.GenerateFirstName(Gender.Female);
-            var lastname = RandomNameGenerator.GenerateLastName();
+            Console.WriteLine("create_a_male_first_name");
+            var firstname = RandomNameGenerator.GenerateFirstName(Gender.Male);
 
-            Console.WriteLine($"First name : {firstname}");
-            Console.WriteLine($"Last name : {lastname}");
-
-            Assert.IsTrue(firstname != null && lastname != null);
+            Assert.IsNotNull(firstname);
         }
 
         [Test]
-        public void create_one_customer()
+        public void create_a_female_first_name()
         {
-            var customer = new Customer();
-            Console.WriteLine($"Customer : {customer.Name}");
+            Console.WriteLine("create_a_female_first_name");
+            var firstname = RandomNameGenerator.GenerateFirstName(Gender.Female);
 
-            Assert.IsTrue(customer.Name != null);
+            Assert.IsNotNull(firstname);
+        }
+
+        [Test]
+        public void create_a_last_name()
+        {
+            Console.WriteLine("create_a_last_name");
+            var lastname = RandomNameGenerator.GenerateLastName();
+
+            Assert.IsNotNull(lastname);
+        }
+
+        [Test]
+        public void create_male_customer()
+        {
+            Console.WriteLine("create_male_customer");
+            var fullname = RandomNameGenerator.Generate(Gender.Male);
+
+            ICustomer customer = new Customer(fullname, 1);
+
+            Assert.IsTrue(fullname != null && customer.Sex == 1);
+        }
+
+        [Test]
+        public void create_female_customer()
+        {
+            Console.WriteLine("create_female_customer");
+            var fullname = RandomNameGenerator.Generate(Gender.Female);
+
+            ICustomer customer = new Customer(fullname, 2);
+
+            Assert.IsTrue(fullname != null && customer.Sex == 2);
         }
 
         [Test]
