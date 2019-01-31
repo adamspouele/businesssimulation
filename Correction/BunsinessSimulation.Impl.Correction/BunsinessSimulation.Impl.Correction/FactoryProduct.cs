@@ -13,7 +13,7 @@ namespace BusinessSimulation.Impl
         public static IProduct CreateNew(int priceRange = 100, IVat vat = null, ICompany store = null)
         {
             String productName = RandomProductNameGenerator.Generate();
-            int productPrice = _random.Next(0, priceRange);
+            int productPrice = _random.Next(1, priceRange);
             var product = new Product(productName, productPrice, vat);
 
             if(store != null)

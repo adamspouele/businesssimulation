@@ -65,7 +65,9 @@ namespace BusinessSimulation.Tests
         {
             IOrder order = new Order();
 
-            var products = FactoryProduct.CreateMultipleProducts(3);
+            var vat = new Vat(20);
+
+            var products = FactoryProduct.CreateMultipleProducts(3, 100, vat);
 
             order.Products.AddRange(products);
 
