@@ -11,7 +11,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BusinessSimulation.Impl\BusinessSimulation.Impl.csproj" />
+    <Reference Include="BunsinessSimulation.Impl.Correction">
+      <HintPath>..\Correction\BunsinessSimulation.Impl.Correction\BunsinessSimulation.Impl.Correction\bin\Debug\netstandard2.0\BunsinessSimulation.Impl.Correction.dll</HintPath>
+    </Reference>
+    <Reference Include="BusinessSimulation.Model">
+      <HintPath>..\BusinessSimulation.Model\bin\Debug\netstandard2.0\BusinessSimulation.Model.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>
